@@ -1,0 +1,288 @@
+/*
+Monokai Sublime style for highlight.js. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+*/
+
+.hljs {
+  background: #282c34;
+  color: #fff;
+}
+
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+/*
+Start of custom CSS from here on
+*/
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+#navbar {
+  background-color: #f8fafc;
+  border-right: 1px solid #eaf0f6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0;
+  height: 100%;
+  width: 260px;
+}
+
+#navbar header {
+  color: #303d4b;
+  font-size: 32px;
+  font-weight: 700;
+  padding: 20px;
+}
+
+#navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+}
+
+#navbar ul li {
+  margin: 0 0 5px 0;
+  padding: 0;
+}
+
+#navbar ul li a {
+  border-left: 0px solid #3c4d5e;
+  border-radius: 1px;
+  display: block;
+  color: #3c4d5e;
+  font-size: 22px;
+  margin: 0;
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: all 0.1s linear;
+}
+
+#navbar ul li a:hover {
+  border-left: 5px solid #3c4d5e;
+  color: #5f7a95;
+}
+
+#main-doc {
+  margin: 0 0 0 300px;
+  padding: 0 20px;
+}
+
+.main-section {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.main-section header {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3em;
+  margin-top: 40px;
+}
+
+.main-section p {
+  font-size: 18px;
+  line-height: 1.6em;
+}
+
+.main-section a {
+  background-color: #f8fafc;
+  color: #3c4d5e;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  transition: all 0.1s linear;
+}
+
+.main-section a:hover {
+  background-color: #d4e0ed;
+  border-bottom: 1px solid #3c4d5e;
+  color: #3c4d5e;
+}
+
+pre {
+  background: #282c34;
+  border-radius: 5px;
+  display: block;
+  font-family: "Inconsolata", monospace;
+  padding: 20px;
+  min-width: 0;
+}
+
+pre code {
+  font-size: 14px;
+  line-height: 1.3em;
+}
+
+.code-panels {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 -10px 0 -10px;
+}
+
+.panel {
+  display: flex;
+  flex: 1 0 auto;
+  flex-flow: column;
+  margin: 0 10px 20px 10px;
+}
+
+.panel span {
+  margin-bottom: 10px;
+}
+
+.panel pre {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0 0 10px 0;
+}
+
+ul {
+  font-size: 18px;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+ul li code {
+  font-weight: 700;
+}
+
+.info {
+  background-color: hsl(193, 94%, 95%);
+  border-left: 8px solid hsl(193, 94%, 85%);
+  border-radius: 5px;
+  margin: 30px 0;
+  padding: 20px;
+}
+
+.info span {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.info p {
+  font-size: 17px;
+}
+
+@media only screen and (max-width: 760px) {
+  #navbar {
+    border-right: none;
+    border-bottom: 2px solid #d4e0ed;
+    position: static;
+    height: auto;
+    width: 100%;
+  }
+
+  #navbar header {
+    font-size: 26px;
+    font-weight: 700;
+    padding: 20px;
+    text-align: center;
+  }
+
+  #navbar ul {
+    overflow-y: scroll;
+    padding: 0;
+    max-height: 150px;
+  }
+
+  #navbar ul li {
+    margin: 0;
+  }
+
+  #navbar ul li a {
+    backgrouund-color: #f8fafc;
+    border-left: none;
+    border-top: 1px solid #d4e0ed;
+    border-radius: 0;
+    font-size: 18px;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  #navbar ul li a:hover {
+    background-color: #f1f5f9;
+    border-left: none;
+    color: #5f7a95;
+  }
+
+  #main-doc {
+    margin: 0;
+  }
+  pre code {
+    font-size: 13px;
+  }
+}

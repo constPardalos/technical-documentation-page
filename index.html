@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FCC: Technical Documentation Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Source+Sans+Pro:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>SASS Basic Documentation</header>
+
+      <ul>
+        <li><a href="#Preprocessing" class="nav-link">Preprocessing</a></li>
+        <li><a href="#Variables" class="nav-link">Variables</a></li>
+        <li><a href="#Nesting" class="nav-link">Nesting</a></li>
+        <li><a href="#Partials" class="nav-link">Partials</a></li>
+        <li><a href="#Modules" class="nav-link">Modules</a></li>
+        <li><a href="#Mixins" class="nav-link">Mixins</a></li>
+        <li><a href="#Extend" class="nav-link">Extend</a></li>
+        <li><a href="#Operators" class="nav-link">Operators</a></li>
+        <li><a href="#About" class="nav-link">About</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Document -->
+    <main id="main-doc">
+      <!-- Main Section 1 -->
+      <section id="Preprocessing" class="main-section">
+        <header>Preprocessing</header>
+
+        <article>
+          <p>
+            CSS on its own can be fun, but stylesheets are getting larger, more
+            complex, and harder to maintain. This is where a preprocessor can
+            help. Sass lets you use features that don't exist in CSS yet like
+            variables, nesting, mixins, inheritance and other nifty goodies that
+            make writing CSS fun again.
+          </p>
+
+          <p>
+            Once you start tinkering with Sass, it will take your preprocessed
+            Sass file and save it as a normal CSS file that you can use in your
+            website.
+          </p>
+
+          <p>
+            The most direct way to make this happen is in your terminal. Once
+            Sass is installed, you can compile your Sass to CSS using the sass
+            command. You'll need to tell Sass which file to build from, and
+            where to output CSS to. For example, running sass input.scss
+            output.css from your terminal would take a single Sass file,
+            input.scss, and compile that file to output.css.
+          </p>
+
+          <p>
+            You can also watch individual files or directories with the --watch
+            flag. The watch flag tells Sass to watch your source files for
+            changes, and re-compile CSS each time you save your Sass. If you
+            wanted to watch (instead of manually build) your input.scss file,
+            you'd just add the watch flag to your command, like so:
+          </p>
+
+          <pre><code>sass --watch input.scss output.css</code></pre>
+
+          <p>
+            You can watch and output to directories by using folder paths as
+            your input and output, and separating them with a colon. In this
+            example:
+          </p>
+
+          <pre><code>sass --watch app/sass:public/stylesheets</code></pre>
+
+          <p>
+            Sass would watch all files in the app/sass folder for changes, and
+            compile CSS to the public/stylesheets folder.
+          </p>
+        </article>
+      </section>
+
+      <!-- Main Section 2 -->
+      <section id="Variables" class="main-section">
+        <header>Variables</header>
+
+        <article>
+          <p>
+            Think of variables as a way to store information that you want to
+            reuse throughout your stylesheet. You can store things like colors,
+            font stacks, or any CSS value you think you'll want to reuse. Sass
+            uses the $ symbol to make something a variable. Here's an example:
+          </p>
+
+          <div class="code-panels">
+            <div class="panel">
+              <span>SCSS</span>
+              <pre>
+          <code class="scss">$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}</code>
+</pre>
+            </div>
+
+            <div class="panel">
+              <span>CSS</span>
+              <pre>
+          <code class="css">body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}</code>
+          </pre>
+            </div>
+          </div>
+
+          <p>
+            When the Sass is processed, it takes the variables we define for the
+            $font-stack and $primary-color and outputs normal CSS with our
+            variable values placed in the CSS. This can be extremely powerful
+            when working with brand colors and keeping them consistent
+            throughout the site.
+          </p>
+
+          <div class="info">
+            <span>Fun fact:</span>
+            <p>
+              Sass variables, like all Sass identifiers, treat hyphens and
+              underscores as identical. This means that $font-size and
+              $font_size both refer to the same variable. This is a historical
+              holdover from the very early days of Sass, when it only allowed
+              underscores in identifier names. Once Sass added support for
+              hyphens to match CSS’s syntax, the two were made equivalent to
+              make migration easier.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <!-- Main Section 3 -->
+      <section id="Nesting" class="main-section">
+        <header>Nesting</header>
+
+        <article>
+          <p>
+            When writing HTML you've probably noticed that it has a clear nested
+            and visual hierarchy. CSS, on the other hand, doesn't.
+          </p>
+
+          <p>
+            Sass will let you nest your CSS selectors in a way that follows the
+            same visual hierarchy of your HTML. Be aware that overly nested
+            rules will result in over-qualified CSS that could prove hard to
+            maintain and is generally considered bad practice.
+          </p>
+
+          <p>
+            With that in mind, here's an example of some typical styles for a
+            site's navigation:
+          </p>
+
+          <div class="code-panels">
+            <div class="panel">
+              <span>SCSS</span>
+              <pre>
+          <code class="scss">nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}</code>
+          </pre>
+            </div>
+
+            <div class="panel">
+              <span>CSS</span>
+              <pre>
+          <code class="css">nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}</code>
+          </pre>
+            </div>
+          </div>
+
+          <p>
+            You'll notice that the ul, li, and a selectors are nested inside the
+            nav selector. This is a great way to organize your CSS and make it
+            more readable.
+          </p>
+        </article>
+      </section>
+
+      <!-- Main Section 4 -->
+      <section id="Partials" class="main-section">
+        <header>Partials</header>
+
+        <article>
+          <p>
+            You can create partial Sass files that contain little snippets of
+            CSS that you can include in other Sass files. This is a great way to
+            modularize your CSS and help keep things easier to maintain. A
+            partial is a Sass file named with a leading underscore. You might
+            name it something like _partial.scss. The underscore lets Sass know
+            that the file is only a partial file and that it should not be
+            generated into a CSS file. Sass partials are used with the @use
+            rule.
+          </p>
+        </article>
+      </section>
+
+      <!-- Main Section 5 -->
+      <section id="Modules" class="main-section">
+        <header>Modules</header>
+
+        <article>
+          <p>
+            You don't have to write all your Sass in a single file. You can
+            split it up however you want with the @use rule. This rule loads
+            another Sass file as a module, which means you can refer to its
+            variables, mixins, and functions in your Sass file with a namespace
+            based on the filename. Using a file will also include the CSS it
+            generates in your compiled output!
+          </p>
+
+          <div class="code-panels">
+            <div class="panel">
+              <span>SCSS</span>
+              <pre>
+          <code class="scss">// _base.scss
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}</code>
+          </pre>
+              <pre>
+          <code class="scss">// styles.scss
+@use 'base';
+
+.inverse {
+  background-color: base.$primary-color;
+  color: white;
+}</code>
+          </pre>
+            </div>
+
+            <div class="panel">
+              <span>CSS</span>
+              <pre>
+          <code class="css">body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+.inverse {
+  background-color: #333;
+  color: white;
+}</code>
+          </pre>
+            </div>
+          </div>
+
+          <p>
+            Notice we're using @use 'base'; in the styles.scss file. When you
+            use a file you don't need to include the file extension. Sass is
+            smart and will figure it out for you.
+          </p>
+        </article>
+      </section>
+
+      <!-- Main Section 6 -->
+      <section id="Mixins" class="main-section">
+        <header>Mixins</header>
+
+        <article>
+          <p>
+            Some things in CSS are a bit tedious to write, especially with CSS3
+            and the many vendor prefixes that exist. A mixin lets you make
+            groups of CSS declarations that you want to reuse throughout your
+            site. You can even pass in values to make your mixin more flexible.
+            A good use of a mixin is for vendor prefixes. Here's an example for
+            transform.
+          </p>
+
+          <div class="code-panels">
+            <div class="panel">
+              <span>SCSS</span>
+              <pre>
+          <code class="scss">@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+.box { @include transform(rotate(30deg)); }</code>
+          </pre>
+            </div>
+
+            <div class="panel">
+              <span>CSS</span>
+              <pre>
+          <code class="css">.box {
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}</code>
+          </pre>
+            </div>
+          </div>
+
+          <p>
+            To create a mixin you use the @mixin directive and give it a name.
+            We've named our mixin transform. We're also using the variable
+            $property inside the parentheses so we can pass in a transform of
+            whatever we want. After you create your mixin, you can then use it
+            as a CSS declaration starting with @include followed by the name of
+            the mixin.
+          </p>
+        </article>
+      </section>
+
+      <!-- Main Section 7 -->
+      <section id="Extend" class="main-section">
+        <header>Extend</header>
+
+        <article>
+          <p>
+            This is one of the most useful features of Sass. Using @extend lets
+            you share a set of CSS properties from one selector to another. It
+            helps keep your Sass very DRY. In our example we're going to create
+            a simple series of messaging for errors, warnings and successes
+            using another feature which goes hand in hand with extend,
+            placeholder classes. A placeholder class is a special type of class
+            that only prints when it is extended, and can help keep your
+            compiled CSS neat and clean.
+          </p>
+
+          <div class="code-panels">
+            <div class="panel">
+              <span>SCSS</span>
+              <pre>
+          <code class="scss">/* This CSS will print because
+%message-shared is extended. */
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+/* This CSS won't print because
+%equal-heights is never extended. */
+%equal-heights {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.message {
+  @extend %message-shared;
+}
+
+.success {
+  @extend %message-shared;
+  border-color: green;
+}
+
+.error {
+  @extend %message-shared;
+  border-color: red;
+}
+
+.warning {
+  @extend %message-shared;
+  border-color: yellow;
+}</code>
+          </pre>
+            </div>
+
+            <div class="panel">
+              <span>CSS</span>
+              <pre>
+          <code class="css">/* This CSS will print because
+%message-shared is extended. */
+.message, .success, .error, .warning {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}</code>
+          </pre>
+            </div>
+          </div>
+
+          <p>
+            What the above code does is tells .message, .success, .error, and
+            .warning to behave just like %message-shared. That means anywhere
+            that %message-shared shows up, .message, .success, .error, &
+            .warning will too. The magic happens in the generated CSS, where
+            each of these classes will get the same CSS properties as
+            %message-shared. This helps you avoid having to write multiple class
+            names on HTML elements.
+          </p>
+
+          <p>
+            You can extend most simple CSS selectors in addition to placeholder
+            classes in Sass, but using placeholders is the easiest way to make
+            sure you aren't extending a class that's nested elsewhere in your
+            styles, which can result in unintended selectors in your CSS.
+          </p>
+
+          <p>
+            Note that the CSS in %equal-heights isn't generated, because
+            %equal-heights is never extended.
+          </p>
+        </article>
+      </section>
+
+      <!-- Main Section 8 -->
+      <section id="Operators" class="main-section">
+        <header>Operators</header>
+
+        <article>
+          <p>
+            Doing math in your CSS is very helpful. Sass supports a handful of
+            useful operators for working with different values. These include
+            the standard mathematical operators like + and *, as well as
+            operators for various other types:
+          </p>
+
+          <ul>
+            <li>
+              <code>== and !=</code> are used to check if two values are the
+              same.
+            </li>
+            <li>
+              <code>+, -, *, /, and %</code> have their usual mathematical
+              meaning for numbers, with special behaviors for units that matches
+              the use of units in scientific math.
+            </li>
+            <li>
+              <code> <, <=,>, and >= </code> check whether two numbers are
+              greater or less than one another.
+            </li>
+            <li>
+              <code>and, or, and not</code> have the usual boolean behavior.
+              Sass considers every value “true” except for false and null.
+            </li>
+            <li>
+              <code>+, -, and /</code> can be used to concatenate strings.
+            </li>
+          </ul>
+
+          <div class="info">
+            <span>Fun fact:</span>
+            <p>
+              Early on in Sass’s history, it added support for mathematical
+              operations on colors. These operations operated on each of the
+              colors’ RGB channels separately, so adding two colors would
+              produce a color with the sum of their red channels as its red
+              channel and so on.
+            </p>
+            <p>
+              This behavior wasn’t very useful, since it channel-by-channel RGB
+              arithmetic didn’t correspond well to how humans perceive color.
+              Color functions were added which are much more useful, and color
+              operations were deprecated. They’re still supported in LibSass and
+              Ruby Sass, but they’ll produce warnings and users are strongly
+              encouraged to avoid them.
+            </p>
+          </div>
+
+          <p>
+            In our example we're going to do some simple math to calculate
+            widths for an aside & article.
+          </p>
+
+          <div class="code-panels">
+            <div class="panel">
+              <span>SCSS</span>
+              <pre>
+          <code class="scss">.container {
+  width: 100%;
+}
+
+article[role="main"] {
+  float: left;
+  width: 600px / 960px * 100%;
+}
+
+aside[role="complementary"] {
+  float: right;
+  width: 300px / 960px * 100%;
+}</code>
+          </pre>
+            </div>
+
+            <div class="panel">
+              <span>CSS</span>
+              <pre>
+          <code class="css">.container {
+  width: 100%;
+}
+
+article[role="main"] {
+  float: left;
+  width: 62.5%;
+}
+
+aside[role="complementary"] {
+  float: right;
+  width: 31.25%;
+}</code>
+          </pre>
+            </div>
+          </div>
+
+          <p>
+            We've created a very simple fluid grid, based on 960px. Operations
+            in Sass let us do something like take pixel values and convert them
+            to percentages without much hassle.
+          </p>
+        </article>
+      </section>
+
+      <!-- Footer Section -->
+      <section id="About" class="main-section">
+        <header>About</header>
+
+        <article>
+          <p>
+            This is not an actual SASS language documentation, but a
+            <a
+              href="https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page"
+              target="_blank"
+              >freeCodeCamp</a
+            >
+            project that I made to practice my skills. Although the content has
+            been taken from the
+            <a href="https://sass-lang.com/" target="_blank"
+              >official SASS website</a
+            >, it should not be used as a reference or for learning purposes.
+          </p>
+
+          <p>
+            Please visit the
+            <a href="https://sass-lang.com/guide" target="_blank"
+              >actual page</a
+            >
+            (which includes the code examples with both SCSS and SASS) where I
+            copied the content from or the
+            <a href="https://sass-lang.com/documentation" target="_blank"
+              >full SASS documentation</a
+            >
+            if you want to learn about it.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
