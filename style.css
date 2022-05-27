@@ -1,20 +1,211 @@
-/*
-Monokai Sublime style for highlight.js. Derived from Monokai by noformnocontent http://nn.mit-license.org/
-*/
+/* Normalize CSS
+======================*/
+
+button, hr, input {
+    overflow: visible
+}
+
+audio, canvas, progress, video {
+    display: inline-block
+}
+
+progress, sub, sup {
+    vertical-align: baseline
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+menu, article, aside, details, footer, header, nav, section {
+    display: block
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+figcaption, figure, main {
+    display: block
+}
+
+figure {
+    margin: 1em 40px
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0
+}
+
+code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+a {
+    background-color: transparent;
+}
+
+a:active, a:hover {
+    outline-width: 0
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+}
+
+b, strong {
+    font-weight: bolder
+}
+
+dfn {
+    font-style: italic
+}
+
+mark {
+    background-color: #ff0;
+    color: #000
+}
+
+small {
+    font-size: 80%
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative
+}
+
+sub {
+    bottom: -.25em
+}
+
+sup {
+    top: -.5em
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+
+img {
+    border-style: none
+}
+
+svg:not(:root) {
+    overflow: hidden
+}
+
+button, input, optgroup, select, textarea {
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0
+}
+
+button, input {
+}
+
+button, select {
+    text-transform: none
+}
+
+[type=submit], [type=reset], button, html [type=button] {
+    -webkit-appearance: button
+}
+
+[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
+
+[type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring {
+    outline: ButtonText dotted 1px
+}
+
+fieldset {
+    border: 1px solid silver;
+    margin: 0 2px;
+    padding: .35em .625em .75em
+}
+
+legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal
+}
+
+progress {
+}
+
+textarea {
+    overflow: auto
+}
+
+[type=checkbox], [type=radio] {
+    box-sizing: border-box;
+    padding: 0
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+summary {
+    display: list-item
+}
+
+[hidden], template {
+    display: none
+}
+
+/* Monokai Sublime style for highlight.js.
+Derived from Monokai by noformnocontent
+http://nn.mit-license.org/
+======================*/
 
 .hljs {
-  background: #282c34;
-  color: #fff;
+    background: #282c34;
+    color: #fff;
 }
 
 .hljs-tag,
 .hljs-subst {
-  color: #f8f8f2;
+    color: #f8f8f2;
 }
 
 .hljs-strong,
 .hljs-emphasis {
-  color: #a8a8a2;
+    color: #a8a8a2;
 }
 
 .hljs-bullet,
@@ -23,40 +214,40 @@ Monokai Sublime style for highlight.js. Derived from Monokai by noformnocontent 
 .hljs-regexp,
 .hljs-literal,
 .hljs-link {
-  color: #ae81ff;
+    color: #ae81ff;
 }
 
 .hljs-code,
 .hljs-title,
 .hljs-section,
 .hljs-selector-class {
-  color: #a6e22e;
+    color: #a6e22e;
 }
 
 .hljs-strong {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .hljs-emphasis {
-  font-style: italic;
+    font-style: italic;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-name,
 .hljs-attr {
-  color: #f92672;
+    color: #f92672;
 }
 
 .hljs-symbol,
 .hljs-attribute {
-  color: #66d9ef;
+    color: #66d9ef;
 }
 
 .hljs-params,
 .hljs-title.class_,
 .hljs-class .hljs-title {
-  color: #f8f8f2;
+    color: #f8f8f2;
 }
 
 .hljs-string,
@@ -68,221 +259,288 @@ Monokai Sublime style for highlight.js. Derived from Monokai by noformnocontent 
 .hljs-addition,
 .hljs-variable,
 .hljs-template-variable {
-  color: #e6db74;
+    color: #e6db74;
 }
 
 .hljs-comment,
 .hljs-deletion,
 .hljs-meta {
-  color: #75715e;
+    color: #75715e;
 }
 
-/*
-Start of custom CSS from here on
-*/
+/* General styles
+======================*/
 
 body {
-  font-family: "Source Sans Pro", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
 }
 
+/* Navbar
+======================*/
+
 #navbar {
-  background-color: #f8fafc;
-  border-right: 1px solid #eaf0f6;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 0;
-  height: 100%;
-  width: 260px;
+    background-color: #f8fafc;
+    border-right: 1px solid #eaf0f6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0;
+    height: 100%;
+    width: 260px;
 }
 
 #navbar header {
-  color: #303d4b;
-  font-size: 32px;
-  font-weight: 700;
-  padding: 20px;
+    color: #303d4b;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 20px;
 }
 
 #navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 20px;
 }
 
 #navbar ul li {
-  margin: 0 0 5px 0;
-  padding: 0;
+    margin: 0 0 5px 0;
+    padding: 0;
 }
 
 #navbar ul li a {
-  border-left: 0px solid #3c4d5e;
-  border-radius: 1px;
-  display: block;
-  color: #3c4d5e;
-  font-size: 22px;
-  margin: 0;
-  padding: 5px 10px;
-  text-decoration: none;
-  transition: all 0.1s linear;
+    border-left: 0 solid #3c4d5e;
+    border-radius: 1px;
+    display: block;
+    color: #3c4d5e;
+    font-size: 22px;
+    margin: 0;
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: all 0.1s linear;
 }
 
 #navbar ul li a:hover {
-  border-left: 5px solid #3c4d5e;
-  color: #5f7a95;
+    border-left: 5px solid #3c4d5e;
+    color: #5f7a95;
 }
 
+/* Main Content
+======================*/
+
 #main-doc {
-  margin: 0 0 0 300px;
-  padding: 0 20px;
+    margin: 0 0 0 300px;
+    padding: 0 20px;
 }
 
 .main-section {
-  margin: 0 auto;
-  max-width: 960px;
+    margin: 0 auto;
+    max-width: 960px;
 }
 
 .main-section header {
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.3em;
-  margin-top: 40px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3em;
+    margin-top: 40px;
 }
 
 .main-section p {
-  font-size: 18px;
-  line-height: 1.6em;
+    font-size: 18px;
+    line-height: 1.6em;
 }
 
 .main-section a {
-  background-color: #f8fafc;
-  color: #3c4d5e;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  transition: all 0.1s linear;
+    background-color: #f8fafc;
+    color: #3c4d5e;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    transition: all 0.1s linear;
 }
 
 .main-section a:hover {
-  background-color: #d4e0ed;
-  border-bottom: 1px solid #3c4d5e;
-  color: #3c4d5e;
+    background-color: #d4e0ed;
+    border-bottom: 1px solid #3c4d5e;
+    color: #3c4d5e;
 }
 
 pre {
-  background: #282c34;
-  border-radius: 5px;
-  display: block;
-  font-family: "Inconsolata", monospace;
-  padding: 20px;
-  min-width: 0;
+    background: #282c34;
+    border-radius: 5px;
+    display: block;
+    font-family: "Inconsolata", monospace;
+    padding: 20px;
+    min-width: 0;
 }
 
 pre code {
-  font-size: 14px;
-  line-height: 1.3em;
+    font-size: 14px;
+    line-height: 1.3em;
 }
 
 .code-panels {
-  display: flex;
-  flex-flow: row wrap;
-  margin: 0 -10px 0 -10px;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -10px 0 -10px;
 }
 
 .panel {
-  display: flex;
-  flex: 1 0 auto;
-  flex-flow: column;
-  margin: 0 10px 20px 10px;
+    display: flex;
+    flex: 1 0 auto;
+    flex-flow: column;
+    margin: 0 10px 20px 10px;
 }
 
 .panel span {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .panel pre {
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
-  flex-grow: 1;
-  margin: 0 0 10px 0;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 0 0 10px 0;
 }
 
 ul {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 ul li {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 ul li code {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .info {
-  background-color: hsl(193, 94%, 95%);
-  border-left: 8px solid hsl(193, 94%, 85%);
-  border-radius: 5px;
-  margin: 30px 0;
-  padding: 20px;
+    background-color: hsl(193, 94%, 95%);
+    border-left: 8px solid hsl(193, 94%, 85%);
+    border-radius: 5px;
+    margin: 30px 0;
+    padding: 20px;
 }
 
 .info span {
-  font-size: 17px;
-  font-weight: 700;
-  margin-bottom: 20px;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .info p {
-  font-size: 17px;
+    font-size: 17px;
 }
 
+/* Footer
+======================*/
+
+.author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    font-size: 16px;
+    margin: 0 auto;
+    position: fixed;
+    left: 0;
+    bottom: 20px;
+    text-decoration: none;
+    width: 260px;
+}
+
+.author a {
+    background: none;
+    color: #000000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.author a:hover {
+    background: none;
+    border: none;
+}
+
+.author span {
+    display: block;
+}
+
+.author svg {
+    display: inline;
+    fill: #000000;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    transition: 0.2s;
+}
+
+.author:hover svg {
+    fill: #3c4d5e;
+}
+
+/* Media queries
+======================*/
+
 @media only screen and (max-width: 760px) {
-  #navbar {
-    border-right: none;
-    border-bottom: 2px solid #d4e0ed;
-    position: static;
-    height: auto;
-    width: 100%;
-  }
-
-  #navbar header {
-    font-size: 26px;
-    font-weight: 700;
-    padding: 20px;
-    text-align: center;
-  }
-
-  #navbar ul {
-    overflow-y: scroll;
-    padding: 0;
-    max-height: 150px;
-  }
-
-  #navbar ul li {
-    margin: 0;
-  }
-
-  #navbar ul li a {
-    backgrouund-color: #f8fafc;
-    border-left: none;
-    border-top: 1px solid #d4e0ed;
-    border-radius: 0;
-    font-size: 18px;
-    padding: 10px 0;
-    text-align: center;
-  }
-
-  #navbar ul li a:hover {
-    background-color: #f1f5f9;
-    border-left: none;
-    color: #5f7a95;
-  }
-
-  #main-doc {
-    margin: 0;
-  }
-  pre code {
-    font-size: 13px;
-  }
+    #navbar {
+        border-right: none;
+        border-bottom: 2px solid #d4e0ed;
+        position: static;
+        height: auto;
+        width: 100%;
+    }
+    #navbar header {
+        font-size: 26px;
+        font-weight: 700;
+        padding: 20px;
+        text-align: center;
+    }
+    #navbar ul {
+        display: flex;
+        overflow-x: auto;
+        padding: 0;
+        max-height: 150px;
+    }
+    #navbar ul li {
+        margin: 0;
+    }
+    #navbar ul li a {
+        background-color: #f8fafc;
+        border: none;
+        border-right: 1px solid #d4e0ed;
+        border-radius: 0;
+        font-size: 17px;
+        padding: 15px;
+        text-align: center;
+    }
+    #navbar ul li a:hover,
+    #navbar ul li a:focus{
+        background-color: #f1f5f9;
+        border-left: none;
+        border-bottom: 3px solid #3c4d5e;
+        color: #5f7a95;
+    }
+    #main-doc {
+        margin: 0;
+    }
+    .panel {
+        margin: 10px;
+        max-width: 100%;
+    }
+    pre code {
+        font-size: 13px;
+        white-space: pre-wrap;
+    }
+    pre code span {
+        white-space: inherit;
+    }
+    .author {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin: 40px auto;
+        width: auto;
+    }
 }
