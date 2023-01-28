@@ -11,6 +11,15 @@ The end result should fulfill all the user stories specified in the [project's d
 
 <img src="assets/preview.png" />
 
+## Languages & Tools
+
+The following were used for the creation of this project:
+
+<p>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="60" title="HTML5" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="60" title="CSS3" />
+</p>
+
 ## Resources
 
 * Content from [sass-lang.com](https://sass-lang.com/)
